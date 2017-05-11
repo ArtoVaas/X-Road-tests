@@ -57,6 +57,7 @@ class XRoad extends Simulation {
         .body(StringBody("""<?xml version="1.0" encoding="UTF-8"?>
 <SOAP-ENV:Envelope
     xmlns:SOAP-ENV="http://schemas.xmlsoap.org/soap/envelope/"
+    xmlns:ns1="http://producer.x-road.eu"
     xmlns:xrd="http://x-road.eu/xsd/xroad.xsd"
     xmlns:id="http://x-road.eu/xsd/identifiers">
   <SOAP-ENV:Header>
@@ -78,9 +79,9 @@ class XRoad extends Simulation {
     <xrd:protocolVersion>4.0</xrd:protocolVersion>
   </SOAP-ENV:Header>
   <SOAP-ENV:Body>
-    <ns1:getMock xmlns:ns1="http://mock.x-road.ee">
+    <ns1:mock>
       <desiredResponseSize>""" + messageSize + """</desiredResponseSize>
-    </ns1:getMock>
+    </ns1:mock>
   </SOAP-ENV:Body>
 </SOAP-ENV:Envelope>"""))
         .check(
